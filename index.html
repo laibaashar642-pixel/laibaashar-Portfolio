@@ -191,6 +191,7 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
 </style>
 
 
+
 <body data-theme="dark">
 
 <nav>
@@ -207,35 +208,37 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
     <button class="hamburger" onclick="toggleMob()" aria-label="menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
 <div class="mob-menu" id="mobMenu">
   <a href="#home" onclick="closeMob()">Home</a>
   <a href="#about" onclick="closeMob()">About</a>
   <a href="#services" onclick="closeMob()">Services</a>
-  <a href="#experience" onclick="closeMob()">Experience</a>
   <a href="#projects" onclick="closeMob()">Projects</a>
   <a href="#contact" onclick="closeMob()">Contact</a>
 </div>
 
 <!-- HERO -->
 <section id="home">
-  <div class="bg-orb orb1"></div><div class="bg-orb orb2"></div>
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
   <div class="hero-wrap">
     <div>
       <div class="hi-badge fu d1"><span class="hi-line"></span> Hello, I'm</div>
       <h1 class="hero-name fu d2">Laiba <span class="hl">Ashar</span> Malik</h1>
-      <div class="typed-row fu d3">I'm a <span class="typed-word" id="typed">IT Spec</span><span class="cursor-blink"></span></div>
+      <div class="typed-row fu d3">I'm a <span class="typed-word" id="typed">IT Specialist</span><span class="cursor-blink"></span></div>
+      <div class="hero-btns fu d4">
         <a href="#contact" class="btn-fill"><i class="fas fa-paper-plane"></i> Hire Me</a>
+        <a href="#projects" class="btn-line"><i class="fas fa-folder-open"></i> My Projects</a>
       </div>
-      <div class="socials fu d6">
+      <div class="socials fu d5">
         <a href="mailto:kenthompson664@gmail.com" class="soc" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="www.linkedin.com/in/laiba-ashar-malik-782b96376" class="soc" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/laibaashar642-pixel/" class="soc" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/laiba-ashar-malik-782b96376" class="soc" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/laibaashar642-pixel/" class="soc" title="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
       </div>
       <div class="hero-stats fu d6">
-       
-        <div><div class="hstat-num">2+</div><div class="hstat-lbl">Projects</div></div>
+        <div><div class="hstat-num">4+</div><div class="hstat-lbl">Projects</div></div>
         <div><div class="hstat-num">3+</div><div class="hstat-lbl">Languages</div></div>
-        <div><div class="hstat-num">3+</div><div class="hstat-lbl">Framework</div></div>
+        <div><div class="hstat-num">3+</div><div class="hstat-lbl">Frameworks</div></div>
       </div>
     </div>
     <div class="hero-img">
@@ -259,25 +262,55 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
       <div class="about-box" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
         <div class="a-avatar">LAM</div>
         <div class="a-name">Laiba Ashar Malik</div>
-        <div class="a-role">IT Student &amp;Aspiring Backened Developer</div>
+        <div class="a-role">IT Student &amp; Aspiring Backend Developer</div>
         <div class="a-row"><span class="al">Degree</span><span class="av">BS IT</span></div>
-        <div class="a-row"><span class="al">University</span><span class="av">Affialiated With Punjab University</span></div>
+        <div class="a-row"><span class="al">University</span><span class="av">Affiliated With Punjab University</span></div>
         <div class="a-row"><span class="al">Expected</span><span class="av">2028</span></div>
         <div class="a-row"><span class="al">City</span><span class="av">Lahore, PK</span></div>
         <div class="a-row"><span class="al">Languages</span><span class="av">English · Urdu</span></div>
-        <div class="a-row"><span class="al">Status</span><span class="av" style="color:var(--accent)">Open to Work and Internships</span></div>
+        <div class="a-row"><span class="al">Status</span><span class="av" style="color:var(--accent)">Open to Work &amp; Internships</span></div>
       </div>
     </div>
     <div class="about-right">
-      <p>I'm a BS Information Technology student at  Graduate College Affiliated With, Punjab University in Lahore, Pakistan. My journey in tech has been driven by a genuine love for problem-solving and an ambition to build software that creates real value.</p>
+      <p>I'm a BS Information Technology student at Graduate College, affiliated with Punjab University in Lahore, Pakistan. My journey in tech has been driven by a genuine love for problem-solving and an ambition to build software that creates real value.</p>
       <div class="tabs">
         <button class="tab-btn active" onclick="swTab(this,'t1')">Skills</button>
         <button class="tab-btn" onclick="swTab(this,'t2')">Education</button>
         <button class="tab-btn" onclick="swTab(this,'t3')">Tools</button>
       </div>
-      <div id="t1" class="tab-pane active"><div class="pills"><span class="pill">Python(OOPS)</span><span class="pill">SQL</span><span class="pill">Assembly 8086</span><span>C/C++</span><span>OOPS</span><span></span>class="pill">Software Testing</span><span class="pill">Debugging</span><span class="pill">Code Review</span><span class="pill">Technical Docs</span><span class="pill">Remote Collab</span><span class="pill">Data Management</span><span class="pill">Query Optimization</span><span class="pill">Problem Solving</span></div></div>
-      <div id="t2" class="tab-pane"><div class="edu-it"><div class="edu-deg">BS Information Technology</div><div class="edu-sch"> Graduate College Affialiated With, Punjab University · Lahore</div><div class="edu-yr">Expected: 2028</div></div></div>
-      <div id="t3" class="tab-pane"><div class="pills"><span class="pill">Oracle SQL Developer</ class="pill">Task Tracking Tools</span><span class="pill">Relational Databases</span></div></div>
+      <!-- FIX: Corrected broken/malformed pill tags -->
+      <div id="t1" class="tab-pane active">
+        <div class="pills">
+          <span class="pill">Python (OOP)</span>
+          <span class="pill">SQL</span>
+          <span class="pill">Assembly 8086</span>
+          <span class="pill">C/C++</span>
+          <span class="pill">OOP Concepts</span>
+          <span class="pill">Software Testing</span>
+          <span class="pill">Debugging</span>
+          <span class="pill">Code Review</span>
+          <span class="pill">Technical Docs</span>
+          <span class="pill">Remote Collab</span>
+          <span class="pill">Data Management</span>
+          <span class="pill">Query Optimization</span>
+          <span class="pill">Problem Solving</span>
+        </div>
+      </div>
+      <div id="t2" class="tab-pane">
+        <div class="edu-it">
+          <div class="edu-deg">BS Information Technology</div>
+          <div class="edu-sch">Graduate College, Affiliated With Punjab University · Lahore</div>
+          <div class="edu-yr">Expected: 2028</div>
+        </div>
+      </div>
+      <!-- FIX: Corrected broken closing tag in Tools tab -->
+      <div id="t3" class="tab-pane">
+        <div class="pills">
+          <span class="pill">Oracle SQL Developer</span>
+          <span class="pill">Task Tracking Tools</span>
+          <span class="pill">Relational Databases</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -291,16 +324,24 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
       <p class="sec-sub">Areas where I can contribute and add real value to your team or project.</p>
     </div>
     <div class="srv-grid">
-      <div class="srv-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;"><div class="srv-icon"><i class="fas fa-code"></i></div><div class="srv-title">Python Development</div><div class="srv-desc">Building scripts, automation tools, and software modules using Python — from file management to data processing pipelines.</div></div>
-      <div class="srv-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;"><div class="srv-icon"><i class="fas fa-database"></i></div><div class="srv-title">Database Management</div><div class="srv-desc">Designing relational databases using SQL and Oracle SQL Developer — schema design, query writing, and optimization.</div></div>
-      <div class="srv-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;"><div class="srv-icon"><i class="fas fa-database"></i></div><div class="srv-title">Backened Development</div><div class="srv-desc">Hands‑on experience with models, authentication, CRUD operations, and database migrations.</div></div>
- </div>
+      <div class="srv-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+        <div class="srv-icon"><i class="fas fa-code"></i></div>
+        <div class="srv-title">Python Development</div>
+        <div class="srv-desc">Building scripts, automation tools, and software modules using Python — from file management to data processing pipelines.</div>
+      </div>
+      <div class="srv-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+        <div class="srv-icon"><i class="fas fa-database"></i></div>
+        <div class="srv-title">Database Management</div>
+        <div class="srv-desc">Designing relational databases using SQL and Oracle SQL Developer — schema design, query writing, and optimization.</div>
+      </div>
+      <div class="srv-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+        <div class="srv-icon"><i class="fas fa-server"></i></div>
+        <div class="srv-title">Backend Development</div>
+        <div class="srv-desc">Hands-on experience with models, authentication, CRUD operations, and database migrations.</div>
+      </div>
+    </div>
   </div>
 </div>
-
-
- 
-</section>
 
 <!-- PROJECTS -->
 <div class="sec-alt" id="projects">
@@ -311,16 +352,92 @@ footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2
       <p class="sec-sub">Personal and academic projects where I turned skills into working solutions.</p>
     </div>
     <div class="proj-grid">
-      <div class="proj-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;"><div class="proj-img"><div class="proj-pattern"></div><i class="fas fa-cogs proj-ico"></i></div><div class="proj-body"><div class="proj-type">Personal Project</div><div class="proj-title">Python Voice Assistant</div><div class="proj-desc">
-        - Built a Python-based voice assistant that listens to user commands and performs everyday tasks (time/date queries, opening applications, web searches).
-- Implemented speech recognition and text-to-speech using speech_recognition and pyttsx3, with additional modules (webbrowser, os, datetime) for task automation.
-- Designed as a learning-focused project to strengthen Python fundamentals through real-world application development.</div><div class="proj-tags"><span class="ptag">Python</span><span class="ptag">Automation</span><span class="ptag">OS Module</span><span class="ptag">Scripting</span></div></div></div>
-      <div class="proj-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;"><div class="proj-img"><div class="proj-pattern"></div><i class="fas fa-database proj-ico"></i></div><div class="proj-body"><div class="proj-type">Academic Project</div><div class="proj-title">Job Scraper Tool</div><div class="proj-desc">- Developed a web scraping application using BeautifulSoup to extract job postings (title, company, location, and link) from HTML pages.
-- Implemented error handling with try/except to manage missing data gracefully and ensure program stability.
-- Automated data storage by writing extracted job information into a structured CSV file for easy analysis.
-- Strengthened Python fundamentals through real-world application of requests, beautifulsoup4, and csv libraries.</div><div class="proj-tags"><span class="ptag">Python</span><span class="ptag">Vs.Code</span><span class="ptag">Web Scraping</span><span class="ptag">CSV</span></div></div></div>
-    </div>
 
+      <!-- Project 1: Resume ATS Analyzer -->
+      <div class="proj-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+        <div class="proj-img">
+          <div class="proj-pattern"></div>
+          <i class="fas fa-file-alt proj-ico"></i>
+        </div>
+        <div class="proj-body">
+          <div class="proj-type">Django Project · Featured ⭐</div>
+          <div class="proj-title">Resume ATS Analyzer</div>
+          <div class="proj-desc">Paste your resume text and the system checks ATS keyword compatibility, returns a score as a percentage, and lists missing skills to improve — all built with pure logic, no AI libraries. A real-world tool that helped me learn Django end-to-end: models, views, forms, and HTML/CSS templating.</div>
+          <div class="proj-tags">
+            <span class="ptag">Python</span>
+            <span class="ptag">Django</span>
+            <span class="ptag">HTML/CSS</span>
+            <span class="ptag">ATS Logic</span>
+            <span class="ptag">NLP-free</span>
+          </div>
+          <div style="margin-top:1rem;">
+            <a href="https://lnkd.in/djfaeqTn" target="_blank" rel="noopener" class="proj-link"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Django LMS with AI Quiz Generator -->
+      <div class="proj-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+        <div class="proj-img">
+          <div class="proj-pattern"></div>
+          <i class="fas fa-graduation-cap proj-ico"></i>
+        </div>
+        <div class="proj-body">
+          <div class="proj-type">Django Project · AI Powered 🤖</div>
+          <div class="proj-title">Django LMS + AI Quiz Generator</div>
+          <div class="proj-desc">A full-featured Learning Management System built over 8 weeks — Teacher/Student auth, Course CRUD, Enrollment, Manual &amp; AI-powered Quiz Generator, Progress Tracking with Dashboard Charts, PDF Certificate Generator, and Deployment. Each week a new feature; each bug a new lesson.</div>
+          <div class="proj-tags">
+            <span class="ptag">Python</span>
+            <span class="ptag">Django</span>
+            <span class="ptag">AI Quiz Gen</span>
+            <span class="ptag">Charts</span>
+            <span class="ptag">PDF Cert</span>
+            <span class="ptag">Auth</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Python Voice Assistant -->
+      <div class="proj-card" style="opacity: 0; transform: translateY(22px);">
+        <div class="proj-img">
+          <div class="proj-pattern"></div>
+          <i class="fas fa-microphone proj-ico"></i>
+        </div>
+        <div class="proj-body">
+          <div class="proj-type">Personal Project</div>
+          <div class="proj-title">Python Voice Assistant</div>
+          <div class="proj-desc">Built a Python-based voice assistant that listens to user commands and performs everyday tasks — time/date queries, opening applications, and web searches. Implemented speech recognition and text-to-speech using <em>speech_recognition</em> and <em>pyttsx3</em>, strengthening Python fundamentals through real-world application development.</div>
+          <div class="proj-tags">
+            <span class="ptag">Python</span>
+            <span class="ptag">Automation</span>
+            <span class="ptag">OS Module</span>
+            <span class="ptag">Scripting</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Job Scraper Tool -->
+      <div class="proj-card" style="opacity: 0; transform: translateY(22px);">
+        <div class="proj-img">
+          <div class="proj-pattern"></div>
+          <i class="fas fa-spider proj-ico"></i>
+        </div>
+        <div class="proj-body">
+          <div class="proj-type">Academic Project</div>
+          <div class="proj-title">Job Scraper Tool</div>
+          <div class="proj-desc">Developed a web scraping application using BeautifulSoup to extract job postings — title, company, location, and link — from HTML pages. Implemented error handling to manage missing data gracefully and automated data storage by writing extracted job information into a structured CSV file for easy analysis.</div>
+          <div class="proj-tags">
+            <span class="ptag">Python</span>
+            <span class="ptag">VS Code</span>
+            <span class="ptag">Web Scraping</span>
+            <span class="ptag">CSV</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <!-- CONTACT -->
 <section class="sec" id="contact">
@@ -378,8 +495,13 @@ let pi = 0, ci = 0, deleting = false;
 function type() {
   const el = document.getElementById('typed');
   const phrase = phrases[pi];
-  if (!deleting) { el.textContent = phrase.slice(0, ++ci); if (ci === phrase.length) { deleting = true; setTimeout(type, 1800); return; } }
-  else { el.textContent = phrase.slice(0, --ci); if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; } }
+  if (!deleting) {
+    el.textContent = phrase.slice(0, ++ci);
+    if (ci === phrase.length) { deleting = true; setTimeout(type, 1800); return; }
+  } else {
+    el.textContent = phrase.slice(0, --ci);
+    if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+  }
   setTimeout(type, deleting ? 55 : 85);
 }
 type();
@@ -391,12 +513,21 @@ function sendMsg(btn) {
 }
 // Scroll reveal
 const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; e.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease'; } });
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      e.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    }
+  });
 }, { threshold: 0.1 });
 document.querySelectorAll('.exp-card,.proj-card,.srv-card,.about-box').forEach(el => {
-  el.style.opacity = '0'; el.style.transform = 'translateY(22px)'; obs.observe(el);
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(22px)';
+  obs.observe(el);
 });
 </script>
+
 
 
 </body>
