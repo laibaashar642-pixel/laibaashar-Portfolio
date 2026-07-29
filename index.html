@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -137,6 +138,57 @@ h1.hero-name .hl{background:var(--grad);-webkit-background-clip:text;-webkit-tex
 .fg input,.fg textarea{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:11px 13px;font-family:'Space Grotesk',sans-serif;font-size:0.86rem;color:var(--text);outline:none;transition:border-color 0.2s;resize:none}
 .fg input:focus,.fg textarea:focus{border-color:var(--purple)}
 .fg textarea{height:108px}
+/* Tech stack marquee */
+.stack-wrap{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.stack-track{display:flex;gap:2.2rem;width:max-content;animation:stackScroll 26s linear infinite}
+.stack-track:hover{animation-play-state:paused}
+@keyframes stackScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.stack-item{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);padding:12px 20px;border-radius:12px;white-space:nowrap;flex-shrink:0}
+.stack-item i{font-size:1.15rem;color:var(--lavender)}
+.stack-item span{font-size:0.83rem;color:var(--text2);font-weight:600}
+
+/* Experience timeline */
+.timeline{position:relative;padding-left:2.4rem}
+.timeline::before{content:'';position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--purple),var(--pink))}
+.tl-item{position:relative;margin-bottom:2.4rem}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:-2.4rem;top:4px;width:20px;height:20px;border-radius:50%;background:var(--bg);border:2px solid var(--pink);display:flex;align-items:center;justify-content:center}
+.tl-dot::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--grad)}
+.tl-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.6rem 1.8rem;transition:border-color 0.2s,transform 0.2s}
+.tl-card:hover{border-color:var(--pink);transform:translateX(4px)}
+.tl-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:0.6rem}
+.tl-role{font-size:1rem;font-weight:700;color:var(--text)}
+.tl-org{font-size:0.8rem;color:var(--lavender);font-weight:600;margin-top:2px}
+.tl-date{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text3);background:var(--bg3);border:1px solid var(--border);padding:4px 11px;border-radius:20px;flex-shrink:0}
+.tl-desc{font-size:0.85rem;color:var(--text2);line-height:1.8;font-weight:300;margin-bottom:0.9rem}
+.tl-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
+.cert-btn{display:inline-flex;align-items:center;gap:8px;font-size:0.78rem;font-weight:600;color:#fff;background:var(--grad);padding:9px 18px;border-radius:8px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 0 16px var(--glow-purple)}
+.cert-btn:hover{transform:translateY(-2px);box-shadow:0 0 28px var(--glow-purple)}
+
+/* AI Guide widget */
+.ai-guide{position:fixed;bottom:22px;right:22px;z-index:1200;display:flex;align-items:flex-end;gap:12px;font-family:'Space Grotesk',sans-serif}
+.ai-avatar{position:relative;width:60px;height:60px;border-radius:50%;background:var(--card2);border:2px solid transparent;background-image:linear-gradient(var(--card2),var(--card2)),var(--grad);background-origin:border-box;background-clip:padding-box,border-box;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;box-shadow:0 4px 24px rgba(0,0,0,0.5);transition:transform 0.2s}
+.ai-avatar:hover{transform:scale(1.06)}
+.ai-avatar .ai-ring{position:absolute;inset:-6px;border-radius:50%;border:1.5px solid var(--pink);opacity:0;pointer-events:none}
+.ai-avatar.speaking .ai-ring{animation:aiPulse 1.4s ease-out infinite}
+.ai-avatar.speaking .ai-ring2{animation-delay:0.5s}
+@keyframes aiPulse{0%{opacity:0.7;transform:scale(0.9)}100%{opacity:0;transform:scale(1.5)}}
+.ai-face{font-size:0.72rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:0.5px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.ai-bars{display:flex;align-items:flex-end;gap:2.5px;height:14px}
+.ai-bars span{width:3px;border-radius:2px;background:var(--grad);height:4px;transition:height 0.15s ease}
+.ai-avatar.speaking .ai-bars span:nth-child(1){animation:aiBar 0.9s ease-in-out infinite}
+.ai-avatar.speaking .ai-bars span:nth-child(2){animation:aiBar 0.9s ease-in-out infinite 0.15s}
+.ai-avatar.speaking .ai-bars span:nth-child(3){animation:aiBar 0.9s ease-in-out infinite 0.3s}
+.ai-avatar.speaking .ai-bars span:nth-child(4){animation:aiBar 0.9s ease-in-out infinite 0.45s}
+@keyframes aiBar{0%,100%{height:4px}50%{height:14px}}
+.ai-bubble{max-width:250px;background:var(--card);border:1px solid var(--border2);border-radius:14px 14px 4px 14px;padding:12px 14px;box-shadow:0 10px 34px rgba(0,0,0,0.5);opacity:0;transform:translateY(8px) scale(0.97);pointer-events:none;transition:opacity 0.25s,transform 0.25s}
+.ai-bubble.show{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+.ai-bubble-lbl{font-size:0.63rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--lavender);font-weight:700;margin-bottom:4px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.ai-bubble-text{font-size:0.79rem;color:var(--text2);line-height:1.55;font-weight:400}
+.ai-mute{background:none;border:none;color:var(--text3);cursor:pointer;font-size:0.78rem;padding:2px;flex-shrink:0;transition:color 0.2s}
+.ai-mute:hover{color:var(--pink)}
+@media(max-width:600px){.ai-guide{right:14px;bottom:14px}.ai-bubble{max-width:190px}}
+
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.2rem 5%;text-align:center;position:relative;z-index:1}
 .ft-name{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.4rem}
 .ft-txt{font-size:0.76rem;color:var(--text3);letter-spacing:0.04em}
@@ -167,6 +219,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.2rem 5
   <ul class="nav-links">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -177,6 +230,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.2rem 5
 <div class="mob-menu" id="mobMenu">
   <a href="#home" onclick="closeMob()">Home</a>
   <a href="#about" onclick="closeMob()">About</a>
+  <a href="#experience" onclick="closeMob()">Experience</a>
   <a href="#services" onclick="closeMob()">Services</a>
   <a href="#projects" onclick="closeMob()">Projects</a>
   <a href="#contact" onclick="closeMob()">Contact</a>
@@ -207,7 +261,43 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.2rem 5
     </div>
     <div class="hero-img">
       <div style="position:relative;width:340px;height:380px;border-radius:24px;overflow:hidden;border:3px solid transparent;background:linear-gradient(#0a0812,#0a0812) padding-box,linear-gradient(135deg,#f472b6,#a855f7) border-box;box-shadow:0 0 40px rgba(168,85,247,0.5),0 0 80px rgba(244,114,182,0.2)">
-        <img src="PLACEHOLDER_IMG" alt="Laiba Ashar Malik" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
+        <svg viewBox="0 0 340 380" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" style="display:block">
+          <defs>
+            <linearGradient id="avGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#a855f7"/>
+              <stop offset="1" stop-color="#f472b6"/>
+            </linearGradient>
+            <radialGradient id="avGlow1" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="#a855f7" stop-opacity="0.35"/>
+              <stop offset="1" stop-color="#a855f7" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="avGlow2" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="#f472b6" stop-opacity="0.3"/>
+              <stop offset="1" stop-color="#f472b6" stop-opacity="0"/>
+            </radialGradient>
+            <pattern id="avDots" width="18" height="18" patternUnits="userSpaceOnUse">
+              <circle cx="1.2" cy="1.2" r="1.2" fill="#a855f7" opacity="0.35"/>
+            </pattern>
+          </defs>
+          <rect width="340" height="380" fill="#0f0b1c"/>
+          <rect width="340" height="380" fill="url(#avDots)"/>
+          <circle cx="55" cy="55" r="110" fill="url(#avGlow1)"/>
+          <circle cx="300" cy="330" r="130" fill="url(#avGlow2)"/>
+
+          <!-- generic bust silhouette -->
+          <circle cx="170" cy="148" r="46" fill="url(#avGrad)" opacity="0.92"/>
+          <path d="M78 300 C78 224 116 196 170 196 C224 196 262 224 262 300 L262 340 L78 340 Z" fill="url(#avGrad)" opacity="0.92"/>
+
+          <!-- YOLO-style detection box -->
+          <g stroke="#f472b6" stroke-width="2.5" fill="none" opacity="0.95">
+            <path d="M84 86 H110 M84 86 V112"/>
+            <path d="M256 86 H230 M256 86 V112"/>
+            <path d="M84 328 H110 M84 328 V302"/>
+            <path d="M256 328 H230 M256 328 V302"/>
+          </g>
+          <rect x="84" y="64" width="112" height="24" rx="4" fill="#0f0b1c" stroke="#f472b6" stroke-width="1.2"/>
+          <text x="92" y="80" font-family="monospace" font-size="12" fill="#f472b6" font-weight="700">person · 0.98</text>
+        </svg>
         <div style="position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(transparent,rgba(10,8,18,0.9))">
           <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#f472b6,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:1px">LAIBA ASHAR MALIK</div>
           <div style="font-size:11px;color:#c084fc;letter-spacing:2px;margin-top:2px">AI/ML INTERN · DEVELOPER</div>
@@ -218,7 +308,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.2rem 5
   </div>
 </section>
 
-<section class="sec" id="about">
+<section class="sec" id="about" data-ai-text="Laiba is a BS Information Technology student at Graduate College Lahore, affiliated with the University of the Punjab, and an AI/ML intern at Webevis Technology, working hands-on with computer vision and backend development.">
   <div class="sec-hd">
     <div class="sec-tag">About Me</div>
     <h2 class="sec-title">Who <span>I Am</span></h2>
@@ -233,52 +323,17 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.2rem 5
         <div class="a-name">Laiba Ashar Malik</div>
         <div class="a-role">AI/ML Intern · Python &amp; Django Developer</div>
         <div class="a-row"><span class="al">Degree</span><span class="av">BS IT — 4th Semester</span></div>
-        <div class="a-row"><span class="al">University</span><span class="av">Punjab University</span></div>
+        <div class="a-row"><span class="al">University</span><span class="av">Graduate College Lahore (PU)</span></div>
         <div class="a-row"><span class="al">Expected</span><span class="av">2028</span></div>
         <div class="a-row"><span class="al">City</span><span class="av">Lahore, PK 🇵🇰</span></div>
         <div class="a-row"><span class="al">Company</span><span class="av">Webevis Technology</span></div>
         <div class="a-row"><span class="al">Status</span><span class="av" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:700">Open to Work</span></div>
       </div>
 
-      <div class="hack-banner">
-        <div class="hack-inner">
-          <div class="hack-icon">🏆</div>
-          <div>
-            <div class="hack-title">Nexus AI — Hackathon</div>
-            <div class="hack-sub">Governed cognitive infrastructure for strategic intelligence. My role: QA &amp; Testing — wrote test cases, caught bugs under pressure, made it work before demo time.</div>
-            <div class="hack-tags">
-              <span class="hack-tag">Python</span>
-              <span class="hack-tag">FastAPI</span>
-              <span class="hack-tag">Next.js</span>
-              <span class="hack-tag">SQLite</span>
-              <span class="hack-tag">LLM</span>
-              <span class="hack-tag">QA Role</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hack-banner">
-        <div class="hack-inner">
-          <div class="hack-icon">🤖</div>
-          <div>
-            <div class="hack-title">AI/ML Internship — Webevis Technology</div>
-            <div class="hack-sub">Trained custom YOLO models for object detection, instance segmentation &amp; pose estimation. Built deep neural networks from scratch in NumPy (backprop, softmax, cross-entropy), and explored MediaPipe, OpenPose &amp; ByteTrack for real-time tracking.</div>
-            <div class="hack-tags">
-              <span class="hack-tag">YOLO</span>
-              <span class="hack-tag">OpenCV</span>
-              <span class="hack-tag">MediaPipe</span>
-              <span class="hack-tag">OpenPose</span>
-              <span class="hack-tag">ByteTrack</span>
-              <span class="hack-tag">NumPy</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <div class="about-right">
-      <p>I'm a BS Information Technology student at Graduate College, affiliated with Punjab University in Lahore, Pakistan — currently interning as an AI/ML Intern at <strong style="color:var(--lavender)">Webevis Technology</strong>, where I train computer vision models and build backend systems.</p>
+      <p>I'm a BS Information Technology student at Graduate College Lahore, affiliated with the University of the Punjab — currently interning as an AI/ML Intern at <strong style="color:var(--lavender)">Webevis Technology</strong>, where I train computer vision models and build backend systems.</p>
       <p>I don't just watch tutorials — I ship things. From a Django LMS with AI quiz generation to a custom-trained YOLO model detecting sign language in real time, every project taught me something new. Backend development, computer vision, and clean Python OOP are my home turf.</p>
       <div class="tabs">
         <button class="tab-btn active" onclick="swTab(this,'t1')">Skills</button>
@@ -309,7 +364,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.2rem 5
       <div id="t2" class="tab-pane">
         <div class="edu-it">
           <div class="edu-deg">BS Information Technology</div>
-          <div class="edu-sch">Graduate College · Affiliated With Punjab University · Lahore</div>
+          <div class="edu-sch">Graduate College, Lahore · Affiliated with the University of the Punjab</div>
           <div class="edu-yr">4th Semester · Expected 2028</div>
         </div>
       </div>
@@ -345,7 +400,88 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.2rem 5
   </div>
 </section>
 
-<div class="sec-alt" id="services">
+<div class="stack-wrap sec" style="padding-top:0;padding-bottom:0">
+  <div class="stack-track">
+    <div class="stack-item"><i class="fab fa-python"></i><span>Python</span></div>
+    <div class="stack-item"><i class="fas fa-layer-group"></i><span>Django</span></div>
+    <div class="stack-item"><i class="fas fa-plug"></i><span>Django REST Framework</span></div>
+    <div class="stack-item"><i class="fas fa-eye"></i><span>YOLO</span></div>
+    <div class="stack-item"><i class="fas fa-camera-retro"></i><span>OpenCV</span></div>
+    <div class="stack-item"><i class="fas fa-bolt"></i><span>FastAPI</span></div>
+    <div class="stack-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+    <div class="stack-item"><i class="fas fa-database"></i><span>SQL</span></div>
+    <div class="stack-item"><i class="fab fa-git-alt"></i><span>Git &amp; GitHub</span></div>
+    <div class="stack-item"><i class="fas fa-brain"></i><span>NumPy</span></div>
+    <div class="stack-item"><i class="fas fa-vial"></i><span>QA &amp; Testing</span></div>
+    <div class="stack-item"><i class="fas fa-spider"></i><span>Web Scraping</span></div>
+    <!-- duplicate set for seamless loop -->
+    <div class="stack-item"><i class="fab fa-python"></i><span>Python</span></div>
+    <div class="stack-item"><i class="fas fa-layer-group"></i><span>Django</span></div>
+    <div class="stack-item"><i class="fas fa-plug"></i><span>Django REST Framework</span></div>
+    <div class="stack-item"><i class="fas fa-eye"></i><span>YOLO</span></div>
+    <div class="stack-item"><i class="fas fa-camera-retro"></i><span>OpenCV</span></div>
+    <div class="stack-item"><i class="fas fa-bolt"></i><span>FastAPI</span></div>
+    <div class="stack-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+    <div class="stack-item"><i class="fas fa-database"></i><span>SQL</span></div>
+    <div class="stack-item"><i class="fab fa-git-alt"></i><span>Git &amp; GitHub</span></div>
+    <div class="stack-item"><i class="fas fa-brain"></i><span>NumPy</span></div>
+    <div class="stack-item"><i class="fas fa-vial"></i><span>QA &amp; Testing</span></div>
+    <div class="stack-item"><i class="fas fa-spider"></i><span>Web Scraping</span></div>
+  </div>
+</div>
+
+<section class="sec" id="experience" data-ai-text="She's trained custom YOLO models for real-time detection, and led QA testing for Nexus AI, an LLM-powered hackathon project, catching critical bugs before the live demo.">
+  <div class="sec-hd">
+    <div class="sec-tag">Where I've Worked</div>
+    <h2 class="sec-title">Experience &amp; <span>Achievements</span></h2>
+    <p class="sec-sub">On-the-job AI/ML work and a hackathon that tested it under pressure.</p>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-top">
+          <div>
+            <div class="tl-role">AI/ML Intern</div>
+            <div class="tl-org">Webevis Technology</div>
+          </div>
+          <div class="tl-date">2025 — Present</div>
+        </div>
+        <div class="tl-desc">Training custom YOLO models for object detection, instance segmentation, and pose estimation on Roboflow datasets in Google Colab. Built a real-time ASL sign-language detection pipeline with a modular, class-based architecture. Implemented deep neural networks from scratch in NumPy — backpropagation, softmax classification, cross-entropy loss — and integrated OpenCV, MediaPipe, OpenPose, and ByteTrack for live tracking and inference.</div>
+        <div class="tl-tags">
+          <span class="hack-tag">YOLO</span>
+          <span class="hack-tag">OpenCV</span>
+          <span class="hack-tag">MediaPipe</span>
+          <span class="hack-tag">ByteTrack</span>
+          <span class="hack-tag">NumPy</span>
+        </div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-top">
+          <div>
+            <div class="tl-role">QA &amp; Testing — Nexus AI</div>
+            <div class="tl-org">BrightData AI Agents Web Data Hackathon · lablab.ai</div>
+          </div>
+          <div class="tl-date">2026</div>
+        </div>
+        <div class="tl-desc">Owned QA &amp; testing for Nexus AI, a governed cognitive-infrastructure project reducing real-world event streams into bounded, replayable strategic projections. Wrote and ran test cases across the deterministic JSON-schema extraction pipeline and strategic memory graph, and validated the system's automatic <strong style="color:var(--lavender)">GOVERNANCE_FROZEN</strong> state and its graceful fallback from LLM output to deterministic regex parsing — catching and resolving critical bugs before the live demo.</div>
+        <div class="tl-tags">
+          <span class="hack-tag">Python</span>
+          <span class="hack-tag">FastAPI</span>
+          <span class="hack-tag">Next.js</span>
+          <span class="hack-tag">SQLite</span>
+          <span class="hack-tag">LLM</span>
+        </div>
+        <a href="https://lablab.ai/u/@CodeCrafterPk1/ai-hackathons/brightdata-ai-agents-web-data-hackathon/certificate" target="_blank" rel="noopener" class="cert-btn"><i class="fas fa-award"></i> View Certificate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-alt" id="services" data-ai-text="From computer vision pipelines to Django REST APIs, Laiba builds real, working systems, not just tutorials.">
   <div class="inner">
     <div class="sec-hd">
       <div class="sec-tag">What I Offer</div>
@@ -387,7 +523,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.2rem 5
   </div>
 </div>
 
-<div class="sec-alt" id="projects" style="background:var(--bg)">
+<div class="sec-alt" id="projects" style="background:var(--bg)" data-ai-text="Here are a few of her shipped projects, including a real-time sign language detector and a full learning management system with AI-generated quizzes.">
   <div class="inner">
     <div class="sec-hd">
       <div class="sec-tag">Portfolio</div>
@@ -499,7 +635,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.2rem 5
   </div>
 </div>
 
-<section class="sec" id="contact">
+<section class="sec" id="contact" data-ai-text="If you're looking for an AI or backend intern who actually ships working projects, feel free to reach out. She'd love to hear from you.">
   <div class="sec-hd">
     <div class="sec-tag">Contact Me</div>
     <h2 class="sec-title">Let's <span>Connect</span></h2>
@@ -531,6 +667,24 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.2rem 5
   <div class="ft-txt">© 2025 · Lahore, Pakistan · BS Information Technology · AI/ML Intern @ Webevis Technology</div>
   <div class="ft-motto">"build it, break it, learn from it." 🚀</div>
 </footer>
+
+<div class="ai-guide">
+  <div class="ai-bubble" id="aiBubble">
+    <div class="ai-bubble-lbl">
+      <span>AI Guide</span>
+      <button class="ai-mute" id="aiMute" title="Mute voice"><i class="fas fa-volume-up"></i></button>
+    </div>
+    <div class="ai-bubble-text" id="aiText">Hi, I'm Laiba's AI guide. Tap me and I'll walk you through her work as you scroll.</div>
+  </div>
+  <div class="ai-avatar" id="aiAvatar" title="Start AI guide">
+    <div class="ai-ring ai-ring1"></div>
+    <div class="ai-ring ai-ring2"></div>
+    <div class="ai-face">
+      <span>AI</span>
+      <div class="ai-bars"><span></span><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</div>
 
 <script>
 function toggleMob(){document.getElementById('mobMenu').classList.toggle('open')}
@@ -570,11 +724,83 @@ const obs=new IntersectionObserver(entries=>{
     }
   });
 },{threshold:0.1});
-document.querySelectorAll('.proj-card,.srv-card,.about-box,.hack-banner').forEach(el=>{
+document.querySelectorAll('.proj-card,.srv-card,.about-box,.hack-banner,.tl-card').forEach(el=>{
   el.style.opacity='0';
   el.style.transform='translateY(22px)';
   obs.observe(el);
 });
+
+/* ---- AI Guide: speaks section summaries using the browser's built-in voice ---- */
+(function(){
+  const avatar = document.getElementById('aiAvatar');
+  const bubble = document.getElementById('aiBubble');
+  const textEl = document.getElementById('aiText');
+  const muteBtn = document.getElementById('aiMute');
+  const synth = window.speechSynthesis;
+  let started = false, muted = false, narrated = new Set();
+  let voice = null;
+
+  function pickVoice(){
+    const voices = synth.getVoices();
+    voice = voices.find(v=>/female/i.test(v.name)) || voices.find(v=>v.lang && v.lang.startsWith('en')) || voices[0] || null;
+  }
+  if(synth){
+    pickVoice();
+    synth.onvoiceschanged = pickVoice;
+  }
+
+  function say(text){
+    if(!synth || muted) { showBubble(text); return; }
+    synth.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    if(voice) u.voice = voice;
+    u.rate = 1;
+    u.pitch = 1.05;
+    u.onstart = ()=> avatar.classList.add('speaking');
+    u.onend = ()=> avatar.classList.remove('speaking');
+    u.onerror = ()=> avatar.classList.remove('speaking');
+    showBubble(text);
+    synth.speak(u);
+  }
+
+  function showBubble(text){
+    textEl.textContent = text;
+    bubble.classList.add('show');
+    clearTimeout(showBubble._t);
+    showBubble._t = setTimeout(()=> bubble.classList.remove('show'), 7000);
+  }
+
+  avatar.addEventListener('click', ()=>{
+    if(!started){
+      started = true;
+      say("Hi, I'm Laiba's AI guide. Let me walk you through her work as you scroll down.");
+    } else {
+      bubble.classList.toggle('show');
+    }
+  });
+
+  muteBtn.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    muted = !muted;
+    muteBtn.innerHTML = muted ? '<i class="fas fa-volume-mute"></i>' : '<i class="fas fa-volume-up"></i>';
+    if(muted && synth) synth.cancel();
+  });
+
+  const aiObs = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting && started){
+        const id = entry.target.id;
+        const text = entry.target.getAttribute('data-ai-text');
+        if(text && !narrated.has(id)){
+          narrated.add(id);
+          say(text);
+        }
+      }
+    });
+  }, {threshold:0.4});
+  document.querySelectorAll('[data-ai-text]').forEach(el=>aiObs.observe(el));
+})();
+
 </script>
 
 
